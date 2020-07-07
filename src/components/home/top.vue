@@ -1,12 +1,12 @@
 <template>
  <div>
-
+<div>这是头部栏</div>
  </div>
 </template>
 
 <script>
  export default {
-   name: 'Home',
+   name: '',
    props: {
    },
    components: {

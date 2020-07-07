@@ -6,7 +6,7 @@
 
 <script>
  export default {
-   name: 'Home',
+   name: 'Login',
    props: {
    },
    components: {
