@@ -3,10 +3,7 @@
     <div class="container">
       <div class="cart">
         <Card>
-          <div class="box">
-            <div class="icon">M</div>
-          </div>
-          <div class="box1">使用 XMall 账号 登录官网</div>
+          <div class="box1">注册 XMall 账号</div>
           <div>
             <div class="ipt">
               <Input v-model="value1" placeholder="账号" clearable style="width: 300px" />
@@ -16,6 +13,15 @@
                 v-model="value2"
                 type="password"
                 placeholder="密码"
+                clearable
+                style="width: 300px"
+              />
+            </div>
+            <div class="ipt">
+              <Input
+                v-model="value3"
+                type="password"
+                placeholder="重复密码"
                 clearable
                 style="width: 300px"
               />
@@ -31,32 +37,18 @@
               </div>
             </div>
             <div class="box2">
-              <div class="left">
-                <Checkbox v-model="single">记住密码</Checkbox>
-              </div>
-              <div class="right">
-                <a href='/register' class="register">注册 XMall 账号</a>
-                <div class="box3"></div>
-                <a href style="font-size:12px">忘记密码 ?</a>
-              </div>
+                <Checkbox v-model="single">我已阅读并同意遵守<a href="">法律声明</a>和<a href="">隐私条款</a></Checkbox>
             </div>
-            <div class="btn" v-if="this.value1 === '' || this.value2 === ''">
+            <div class="btn" v-if="this.value1 === '' || this.value2 === '' || this.value3 === ''">
               <Button type="primary" disabled long>登录</Button>
             </div>
             <div class="btn" v-else>
               <Button type="primary" long>登录</Button>
             </div>
-            <div class="back">
-              <Button long>返回</Button>
-            </div>
             <div class="box4"></div>
             <div class="box5">
-              <div>其他账号登录：</div>
-              <div class="img"><img src="../../assets/微信.png" alt=""></div>
-              <div class="img"><img src="../../assets/微博.png" alt=""></div>
-              <div class="img"><img src="../../assets/QQ.png" alt=""></div>
-              <div class="img"><img src="../../assets/推特.png" alt=""></div>
-              <div class="img"><img src="../../assets/支付宝.png" alt=""></div>
+              如果您已拥有 XMall 账号，则可在此
+              <a href>登录</a>
             </div>
           </div>
         </Card>
@@ -73,7 +65,7 @@ const extend = function(to, _from) {
   return to;
 };
 export default {
-  name: "Login",
+  name: "Register",
   props: {
     type: {
       type: String,
@@ -101,6 +93,7 @@ export default {
     return {
       value1: "",
       value2: "",
+      value3: "",
       single: false
     };
   },
@@ -228,9 +221,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.left {
-  font-size: 12px;
+   font-size: 12px;
   color: rgb(172, 170, 170);
 }
 .right {
@@ -264,16 +255,9 @@ export default {
   width: 300px;
   height: 60px;
   display: flex;
-  text-align: left;
+  justify-content: center;;
   align-items: center;
   color: #999;
   font-size: 12px;
-}
-img {
-  width: 20px;
-  height: 20px;
-}
-.img {
-  margin: 5px;
 }
 </style>

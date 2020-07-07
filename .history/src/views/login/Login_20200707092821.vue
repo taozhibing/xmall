@@ -35,7 +35,7 @@
                 <Checkbox v-model="single">记住密码</Checkbox>
               </div>
               <div class="right">
-                <a href='/register' class="register">注册 XMall 账号</a>
+                <a href class="register">注册 XMall 账号</a>
                 <div class="box3"></div>
                 <a href style="font-size:12px">忘记密码 ?</a>
               </div>
@@ -52,11 +52,11 @@
             <div class="box4"></div>
             <div class="box5">
               <div>其他账号登录：</div>
-              <div class="img"><img src="../../assets/微信.png" alt=""></div>
-              <div class="img"><img src="../../assets/微博.png" alt=""></div>
-              <div class="img"><img src="../../assets/QQ.png" alt=""></div>
-              <div class="img"><img src="../../assets/推特.png" alt=""></div>
-              <div class="img"><img src="../../assets/支付宝.png" alt=""></div>
+              <div><img src="../../assets/微信.png" alt=""></div>
+              <div><img src="../../assets/微博.png" alt=""></div>
+              <div><img src="../../assets/QQ.png" alt=""></div>
+              <div><img src="../../assets/推特.png" alt=""></div>
+              <div><img src="../../assets/支付宝.png" alt=""></div>
             </div>
           </div>
         </Card>
@@ -268,12 +268,10 @@ export default {
   align-items: center;
   color: #999;
   font-size: 12px;
+  padding: 10px;
 }
 img {
   width: 20px;
   height: 20px;
-}
-.img {
-  margin: 5px;
 }
 </style>

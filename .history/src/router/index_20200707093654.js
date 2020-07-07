@@ -39,7 +39,7 @@ const routes = [
     name: 'Register',
     component: () => import('../views/register/Register'),
     meta: {
-      title: '注册页'
+      title: '登录页'
     }
   },
 ]

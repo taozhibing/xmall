@@ -35,29 +35,14 @@
                 <Checkbox v-model="single">记住密码</Checkbox>
               </div>
               <div class="right">
-                <a href='/register' class="register">注册 XMall 账号</a>
+                <a href="" class="register">注册 XMall 账号</a>
                 <div class="box3"></div>
-                <a href style="font-size:12px">忘记密码 ?</a>
+                <a href="" style="font-size:12px">忘记密码 ?</a>
               </div>
             </div>
-            <div class="btn" v-if="this.value1 === '' || this.value2 === ''">
-              <Button type="primary" disabled long>登录</Button>
-            </div>
-            <div class="btn" v-else>
-              <Button type="primary" long>登录</Button>
-            </div>
-            <div class="back">
-              <Button long>返回</Button>
-            </div>
-            <div class="box4"></div>
-            <div class="box5">
-              <div>其他账号登录：</div>
-              <div class="img"><img src="../../assets/微信.png" alt=""></div>
-              <div class="img"><img src="../../assets/微博.png" alt=""></div>
-              <div class="img"><img src="../../assets/QQ.png" alt=""></div>
-              <div class="img"><img src="../../assets/推特.png" alt=""></div>
-              <div class="img"><img src="../../assets/支付宝.png" alt=""></div>
-            </div>
+            <div class="btn" v-if="this.value1 === '' || this.value2 === ''"><Button type="primary" disabled long>登录</Button></div>
+            <div class="btn" v-else><Button type="primary" long>登录</Button></div>
+            <div class="back"><Button long>返回</Button></div>
           </div>
         </Card>
       </div>
@@ -245,6 +230,7 @@ export default {
   border: solid 1px #999;
   margin-left: 10px;
   margin-right: 10px;
+
 }
 .register {
   font-size: 12px;
@@ -254,26 +240,5 @@ export default {
 }
 .back {
   margin-top: 10px;
-}
-.box4 {
-  width: 300px;
-  height: 30px;
-  border-bottom: 1px solid rgb(189, 188, 188);
-}
-.box5 {
-  width: 300px;
-  height: 60px;
-  display: flex;
-  text-align: left;
-  align-items: center;
-  color: #999;
-  font-size: 12px;
-}
-img {
-  width: 20px;
-  height: 20px;
-}
-.img {
-  margin: 5px;
 }
 </style>

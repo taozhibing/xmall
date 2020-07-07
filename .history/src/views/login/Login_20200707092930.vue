@@ -35,7 +35,7 @@
                 <Checkbox v-model="single">记住密码</Checkbox>
               </div>
               <div class="right">
-                <a href='/register' class="register">注册 XMall 账号</a>
+                <a href class="register">注册 XMall 账号</a>
                 <div class="box3"></div>
                 <a href style="font-size:12px">忘记密码 ?</a>
               </div>
@@ -274,6 +274,6 @@ img {
   height: 20px;
 }
 .img {
-  margin: 5px;
+  margin: 10px;
 }
 </style>
