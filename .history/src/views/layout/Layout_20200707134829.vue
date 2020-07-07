@@ -7,7 +7,7 @@
       <div>
         <titled></titled>
       </div>
-      <div class="container">
+      <div>
         <router-view></router-view>
       </div>
       <div>
@@ -43,8 +43,4 @@ export default {
 .box {
   width: 100%;
 }
-.container {
-  width: 100%;
-  height: 1000px;
-} 
 </style>

@@ -5,9 +5,9 @@
         <top></top>
       </div>
       <div>
-        <titled></titled>
+        <title></title>
       </div>
-      <div class="container">
+      <div>
         <router-view></router-view>
       </div>
       <div>
@@ -19,14 +19,14 @@
 
 <script>
 import top from "../../components/top/top";
-import titled from "../../components/titled/titled";
+import title from "../../components/title/title";
 import below from "../../components/below/below";
 export default {
   name: "Layout",
   props: {},
   components: {
     top,
-    titled,
+    title,
     below
   },
   data() {
@@ -43,8 +43,4 @@ export default {
 .box {
   width: 100%;
 }
-.container {
-  width: 100%;
-  height: 1000px;
-} 
 </style>

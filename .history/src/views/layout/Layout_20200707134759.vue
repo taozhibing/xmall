@@ -7,7 +7,7 @@
       <div>
         <titled></titled>
       </div>
-      <div class="container">
+      <div>
         <router-view></router-view>
       </div>
       <div>
@@ -19,7 +19,7 @@
 
 <script>
 import top from "../../components/top/top";
-import titled from "../../components/titled/titled";
+import titled from "../../components/title/titled";
 import below from "../../components/below/below";
 export default {
   name: "Layout",
@@ -43,8 +43,4 @@ export default {
 .box {
   width: 100%;
 }
-.container {
-  width: 100%;
-  height: 1000px;
-} 
 </style>

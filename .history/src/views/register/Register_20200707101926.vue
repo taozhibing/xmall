@@ -56,7 +56,7 @@
             <div class="box4"></div>
             <div class="box5">
               如果您已拥有 XMall 账号，则可在此
-              <a href='/login'>登录</a>
+              <a href>登录</a>
             </div>
           </div>
         </Card>
@@ -110,17 +110,7 @@ export default {
       this.$api
         .register({ username: this.username, password: this.password })
         .then(res => {
-          if(this.password === this.rePassword) {
-            this.$Message.success(res.msg);
-          }
-          else if(this.username) {
-             this.$Message.error(res.msg)
-          }
-          else {
-            this.$Message.error('两次密码不一致，请重新输入');
-          }
           console.log(res);
-          this.$router.push({path:'/login',query:{username:this.username,password:this.password}})
         })
         .catch(err => {
           console.log(err);

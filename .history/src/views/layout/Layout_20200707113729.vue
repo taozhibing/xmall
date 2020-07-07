@@ -1,32 +1,30 @@
 <template>
   <div>
     <div class="box">
-      <div>
-        <top></top>
-      </div>
-      <div>
-        <titled></titled>
-      </div>
-      <div class="container">
-        <router-view></router-view>
-      </div>
-      <div>
-        <below></below>
-      </div>
+    <div>
+      <top></top>
+    </div>
+    <div>
+      <title></title>
+    </div>
+    <router-view></router-view>
+    <div>
+      <below></below>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
 import top from "../../components/top/top";
-import titled from "../../components/titled/titled";
+import title from "../../components/title/title";
 import below from "../../components/below/below";
 export default {
   name: "Layout",
   props: {},
   components: {
     top,
-    titled,
+    title,
     below
   },
   data() {
@@ -40,11 +38,4 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.box {
-  width: 100%;
-}
-.container {
-  width: 100%;
-  height: 1000px;
-} 
 </style>

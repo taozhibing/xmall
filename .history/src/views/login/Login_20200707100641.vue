@@ -3,7 +3,10 @@
     <div class="container">
       <div class="cart">
         <Card>
-          <div class="box1">注册 XMall 账号</div>
+          <div class="box">
+            <div class="icon">M</div>
+          </div>
+          <div class="box1">使用 XMall 账号 登录官网</div>
           <div>
             <div class="ipt">
               <Input v-model="username" placeholder="账号" clearable style="width: 300px" />
@@ -13,15 +16,6 @@
                 v-model="password"
                 type="password"
                 placeholder="密码"
-                clearable
-                style="width: 300px"
-              />
-            </div>
-            <div class="ipt">
-              <Input
-                v-model="rePassword"
-                type="password"
-                placeholder="重复密码"
                 clearable
                 style="width: 300px"
               />
@@ -37,26 +31,32 @@
               </div>
             </div>
             <div class="box2">
-              <Checkbox v-model="single">
-                我已阅读并同意遵守
-                <a href>法律声明</a>
-                <span class="span">和</span>
-                <a href>隐私条款</a>
-              </Checkbox>
+              <div class="left">
+                <Checkbox v-model="single">记住密码</Checkbox>
+              </div>
+              <div class="right">
+                <a href='/register' class="register">注册 XMall 账号</a>
+                <div class="box3"></div>
+                <a href style="font-size:12px">忘记密码 ?</a>
+              </div>
             </div>
-            <div
-              class="btn"
-              v-if="this.username === '' || this.password === '' || this.rePassword === ''"
-            >
-              <Button type="primary" disabled long>注册</Button>
+            <div class="btn" v-if="this.value1 === '' || this.value2 === ''">
+              <Button type="primary" disabled long>登录</Button>
             </div>
-            <div @click="register" class="btn" v-else>
-              <Button type="primary" long>注册</Button>
+            <div class="btn" v-else>
+              <Button type="primary" long>登录</Button>
+            </div>
+            <div class="back">
+              <Button long>返回</Button>
             </div>
             <div class="box4"></div>
             <div class="box5">
-              如果您已拥有 XMall 账号，则可在此
-              <a href='/login'>登录</a>
+              <div>其他账号登录：</div>
+              <div class="img"><img src="../../assets/微信.png" alt=""></div>
+              <div class="img"><img src="../../assets/微博.png" alt=""></div>
+              <div class="img"><img src="../../assets/QQ.png" alt=""></div>
+              <div class="img"><img src="../../assets/推特.png" alt=""></div>
+              <div class="img"><img src="../../assets/支付宝.png" alt=""></div>
             </div>
           </div>
         </Card>
@@ -73,7 +73,7 @@ const extend = function(to, _from) {
   return to;
 };
 export default {
-  name: "Register",
+  name: "Login",
   props: {
     type: {
       type: String,
@@ -99,33 +99,12 @@ export default {
   components: {},
   data() {
     return {
-      username: "",
-      password: "",
-      rePassword: "",
+      value1: "",
+      value2: "",
       single: false
     };
   },
   methods: {
-    register() {
-      this.$api
-        .register({ username: this.username, password: this.password })
-        .then(res => {
-          if(this.password === this.rePassword) {
-            this.$Message.success(res.msg);
-          }
-          else if(this.username) {
-             this.$Message.error(res.msg)
-          }
-          else {
-            this.$Message.error('两次密码不一致，请重新输入');
-          }
-          console.log(res);
-          this.$router.push({path:'/login',query:{username:this.username,password:this.password}})
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    },
     loadV2Script() {
       if (typeof window.vaptcha === "function") {
         //如果已经加载就直接放回
@@ -192,6 +171,17 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.icon {
+  width: 90px;
+  height: 90px;
+  background: red;
+  border-radius: 45px;
+  color: white;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .box1 {
   height: 60px;
   display: flex;
@@ -237,12 +227,17 @@ export default {
   height: 60px;
   display: flex;
   align-items: center;
-  text-align: left;
+  justify-content: space-between;
+}
+.left {
   font-size: 12px;
   color: rgb(172, 170, 170);
 }
-.span {
-  margin: 3px;
+.right {
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .box3 {
   width: 1px;
@@ -251,8 +246,14 @@ export default {
   margin-left: 10px;
   margin-right: 10px;
 }
+.register {
+  font-size: 12px;
+}
 .btn {
   width: 300px;
+}
+.back {
+  margin-top: 10px;
 }
 .box4 {
   width: 300px;
@@ -263,9 +264,16 @@ export default {
   width: 300px;
   height: 60px;
   display: flex;
-  justify-content: center;
+  text-align: left;
   align-items: center;
   color: #999;
   font-size: 12px;
+}
+img {
+  width: 20px;
+  height: 20px;
+}
+.img {
+  margin: 5px;
 }
 </style>

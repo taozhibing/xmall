@@ -19,7 +19,7 @@
             </div>
             <div class="ipt">
               <Input
-                v-model="rePassword"
+                v-model="value3"
                 type="password"
                 placeholder="重复密码"
                 clearable
@@ -44,19 +44,16 @@
                 <a href>隐私条款</a>
               </Checkbox>
             </div>
-            <div
-              class="btn"
-              v-if="this.username === '' || this.password === '' || this.rePassword === ''"
-            >
-              <Button type="primary" disabled long>注册</Button>
+            <div class="btn" v-if="this.value1 === '' || this.value2 === '' || this.value3 === ''">
+              <Button type="primary" disabled long>登录</Button>
             </div>
-            <div @click="register" class="btn" v-else>
-              <Button type="primary" long>注册</Button>
+            <div class="btn" v-else>
+              <Button type="primary" long>登录</Button>
             </div>
             <div class="box4"></div>
             <div class="box5">
               如果您已拥有 XMall 账号，则可在此
-              <a href='/login'>登录</a>
+              <a href>登录</a>
             </div>
           </div>
         </Card>
@@ -100,32 +97,12 @@ export default {
   data() {
     return {
       username: "",
-      password: "",
-      rePassword: "",
+      passwprd: "",
+      value3: "",
       single: false
     };
   },
   methods: {
-    register() {
-      this.$api
-        .register({ username: this.username, password: this.password })
-        .then(res => {
-          if(this.password === this.rePassword) {
-            this.$Message.success(res.msg);
-          }
-          else if(this.username) {
-             this.$Message.error(res.msg)
-          }
-          else {
-            this.$Message.error('两次密码不一致，请重新输入');
-          }
-          console.log(res);
-          this.$router.push({path:'/login',query:{username:this.username,password:this.password}})
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    },
     loadV2Script() {
       if (typeof window.vaptcha === "function") {
         //如果已经加载就直接放回

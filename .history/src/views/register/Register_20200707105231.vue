@@ -56,7 +56,7 @@
             <div class="box4"></div>
             <div class="box5">
               如果您已拥有 XMall 账号，则可在此
-              <a href='/login'>登录</a>
+              <a href>登录</a>
             </div>
           </div>
         </Card>
