@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <rotation :rotation='rotation'></rotation>
+      <rotation></rotation>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      data: [], // 首页所有数据
+      data: [],
       rotation: [], // 轮播图
       activitySection : [], // 活动版块
       hotGoods: [], // 热门商品

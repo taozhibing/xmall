@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <rotation :rotation='rotation'></rotation>
+      <rotation></rotation>
     </div>
   </div>
 </template>
@@ -16,14 +16,13 @@ export default {
   },
   data() {
     return {
-      data: [], // 首页所有数据
+      data: [],
       rotation: [], // 轮播图
-      activitySection : [], // 活动版块
+      section: [], // 活动版块
       hotGoods: [], // 热门商品
-      officialSelection: [], // 官方精选
+      selection: [], // 官方精选
       brand: [], // 品牌周边
-      brandSelection: [], // 品牌精选
-      activitySections:[] //活动版块2
+      brandSelection : [] // 品牌精选
     };
   },
   methods: {},
@@ -33,20 +32,16 @@ export default {
       .then(res => {
         this.data = res.data;
         this.rotation = res.data[0].panelContents;
-        this.activitySection = res.data[1].panelContents;
+        this.section = res.data[1].panelContents;
         this.hotGoods = res.data[2].panelContents;
-        this.officialSelection = res.data[3].panelContents;
+        this.selection = res.data[3].panelContents;
         this.brand = res.data[4].panelContents;
-        this.brandSelection = res.data[5].panelContents
-        this.activitySections = res.data[6].panelContents
-        // console.log(this.data);
+        console.log(this.data);
         console.log(this.rotation);
-        console.log(this.activitySection);
+        console.log(this.section);
         console.log(this.hotGoods);
-        console.log(this.officialSelection);
+        console.log(this.selection);
         console.log(this.brand);
-        console.log(this.brandSelection);
-        console.log(this.activitySections);
       })
       .catch(err => {
         console.log(err);

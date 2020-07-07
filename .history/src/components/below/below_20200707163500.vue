@@ -103,11 +103,11 @@ export default {
       });
     },
     open2(nodesc) {
-      this.$Notice.warning({
+      this.$Notice.info({
         title: "离线帮助",
         desc: nodesc
           ? ""
-          : "没人会帮助你，请自己靠自己"
+          : "此仅为个人练习开源模仿项目，仅供学习参考，承担不起任何法律问题"
       });
     }
   },
