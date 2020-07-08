@@ -9,18 +9,18 @@
           @mousemove="bgMove($refs.bg,$event)"
           @mouseout="bgOut($refs.bg)"
         >
-        <transition name="fade">
-          <Carousel autoplay v-model="value" loop>
-            <CarouselItem v-for="item in rotation" :key="item.id">
-              <div class="demo-carousel">
-                <div class="swiper">
-                  <img v-if="item.picUrl" class="img1" :src="item.picUrl" alt />
-                  <img v-if="item.picUrl2" class="img2" :src="item.picUrl2" alt />
-                  <img v-if="item.picUrl3" class="img3" :src="item.picUrl3" alt />
+          <transition name="fade">
+            <Carousel autoplay v-model="value" loop>
+              <CarouselItem>
+                <div class="demo-carousel">
+                  <div class="swiper" v-for="item in rotation" :key="item.id">
+                    <img v-if="item.picUrl" class="img1" :src="item.picUrl" alt />
+                    <img v-if="item.picUrl2" class="img2" :src="item.picUrl2" alt />
+                    <img v-if="item.picUrl3" class="img3" :src="item.picUrl3" alt />
+                  </div>
                 </div>
-              </div>
-            </CarouselItem>
-          </Carousel>
+              </CarouselItem>
+            </Carousel>
           </transition>
         </div>
       </div>
@@ -105,7 +105,6 @@ export default {
 .swiper {
   position: relative;
   height: 500px;
-  cursor: pointer;
 }
 .swiper img {
   position: absolute;

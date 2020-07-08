@@ -105,7 +105,6 @@ export default {
 .swiper {
   position: relative;
   height: 500px;
-  cursor: pointer;
 }
 .swiper img {
   position: absolute;
