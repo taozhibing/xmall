@@ -1,27 +1,27 @@
 <template>
   <div>
     <div class="container">
-      <div class="crad">
-        <div class="name">品牌精选</div>
-        <div class="box">
-          <div v-for="(item,index) in brandSelection" :key="index" class="item">
-            <div v-if="index===0" class="items hover">
-              <img :src="item.picUrl" alt width="610px" height="353px" />
+      <div class="card">
+      <div class="name">官方精选</div>
+      <div class="box">
+        <div v-for="(item,index) in officialSelection" :key="index" class="item">
+          <div v-if="index===0" class="items hover">
+            <img :src="item.picUrl" alt width="610px" height="353px"/>
+          </div>
+          <div v-else class="img">
+            <div class="flex-cent">
+              <img :src="item.picUrl" alt width="206px" />
             </div>
-            <div v-else class="img">
-              <div>
-                <img :src="item.picUrl" alt width="206px" />
-              </div>
-              <h6>{{item.productName}}</h6>
-              <h5 class="subTitle">{{item.subTitle}}</h5>
-              <p class="price">￥{{item.salePrice}}.00</p>
-              <p class="btn1">
-                <Button size="small" class="btn">查看详情</Button>
-                <Button type="primary" size="small" class="but">加入购物车</Button>
-              </p>
-            </div>
+            <h6>{{item.productName}}</h6>
+            <h5 class="subTitle">{{item.subTitle}}</h5>
+            <p class="price">￥{{item.salePrice}}.00</p>
+            <p class="btn1">
+              <Button size="small" class="btn">查看详情</Button>
+              <Button type="primary" size="small" class="but">加入购物车</Button>
+            </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
 export default {
   name: "",
   props: {
-    brandSelection: {
+    officialSelection: {
       type: Array,
       default: () => {}
     }
@@ -54,7 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
   width: 77%;
@@ -93,7 +93,7 @@ export default {
   cursor: pointer;
   transform: translateY(-3px);
   box-shadow: 2px 2px 10px;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 .items:hover:before {
   content: "";

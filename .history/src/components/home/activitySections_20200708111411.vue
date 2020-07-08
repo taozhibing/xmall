@@ -2,16 +2,15 @@
   <div>
     <div class="container">
       <div class="card">
-        <div class="box">
-          <div v-for="(item,index) in activitySections" :key="index" class="imgs hover">
-            <div v-if="index>0">
-              <img :src="item.picUrl" alt height="200px" class="img" />
-            </div>
+      <div class="box">
+      <div v-for="(item,index) in activitySections" :key="index" class="imgs hover">
+          <div v-if="index>0">
+            <img :src="item.picUrl" alt height="200px" class="img"/>
           </div>
         </div>
       </div>
+      </div>
     </div>
-    <div class="zhanwei"></div>
   </div>
 </template>
 
@@ -42,7 +41,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
   width: 77%;
@@ -54,29 +53,5 @@ export default {
 .box {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
-}
-.img {
-  margin-right: 100px;
-}
-.imgs:hover:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 1px 1px 10px;
-  transition: all 1s;
-  -webkit-box-shadow: 0 0 30px #ccc inset;
-  -moz-box-shadow: 0 0 30px #ccc inset;
-  -o-box-shadow: 0 0 30px #ccc inset;
-}
-.imgs {
-  display: inline-block;
-  *display: inline;
-  position: relative;
-}
-.zhanwei {
-  width: 100%;
-  height: 60px;
 }
 </style>

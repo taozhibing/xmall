@@ -72,10 +72,10 @@ export default {
       } else {
         Y = bgOpt.h / 2 - mouseY;
       }
-      // console.log(X);
-      // console.log(Y);
-      dom.style["transform"] = `rotateY(${X / 50}deg) rotateX(${Y / 50}deg)`;
-      dom.style.transform = `rotateY(${X / 50}deg) rotateX(${Y / 50}deg)`;
+      console.log(X);
+      console.log(Y);
+      dom.style["transform"] = `rotateY(${X / 45}deg) rotateX(${Y / 45}deg)`;
+      dom.style.transform = `rotateY(${X / 45}deg) rotateX(${Y / 45}deg)`;
     },
     bgOut(dom) {
       dom.style["transform"] = "rotateY(0deg) rotateX(0deg)";

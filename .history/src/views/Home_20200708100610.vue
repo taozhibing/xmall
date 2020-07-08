@@ -3,6 +3,7 @@
     <div>
       <rotation :rotation="rotation"></rotation>
     </div>
+    <tr></tr>
     <div>
       <activitySection :activitySection="activitySection"></activitySection>
     </div>

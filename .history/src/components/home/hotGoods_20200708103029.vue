@@ -1,23 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="card">
-        <div class="name">热门商品</div>
-        <div class="content">
-          <div v-for="item in hotGoods" :key="item.id" class="item">
-            <div class="box">
-              <img :src="item.picUrl" alt width="206px" />
-            </div>
-            <h6>{{item.productName}}</h6>
-            <h5 class="subTitle">{{item.subTitle}}</h5>
-            <p class="price">￥{{item.salePrice}}.00</p>
-            <p class="btn1">
-              <Button size="small" class="btn">查看详情</Button>
-              <Button type="primary" size="small" class="but">加入购物车</Button>
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="card"></div>
     </div>
   </div>
 </template>
@@ -49,7 +33,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
   width: 77%;
@@ -68,10 +52,9 @@ export default {
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.06);
   background: linear-gradient(#fbfbfb, #ececec);
 }
-.content {
-  display: flex;
+.d-flex {
   background: white;
-  border-radius: 0 0 8px 8px;
+  border-radius:  0 0 8px 8px;
 }
 .item {
   width: 50%;
@@ -84,12 +67,6 @@ export default {
   box-shadow: 2px 2px 10px #000;
   transition: all 1s;
   z-index: 99;
-}
-.box {
-  width: 100% auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 img {
   margin-top: 50px;

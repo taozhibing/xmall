@@ -1,37 +1,19 @@
 <template>
   <div>
     <div>
-      <rotation :rotation="rotation"></rotation>
-    </div>
-    <div>
-      <activitySection :activitySection="activitySection"></activitySection>
-    </div>
-    <div>
-      <hotGoods :hotGoods="hotGoods"></hotGoods>
-    </div>
-    <div>
-      <officialSelection :officialSelection="officialSelection"></officialSelection>
-    </div>
-    <div>
-      <brand :brand="brand"></brand>
-    </div>
-    <div>
-      <brandSelection :brandSelection="brandSelection"></brandSelection>
-    </div>
-    <div>
-      <activitySections :activitySections="activitySections"></activitySections>
+      <rotation :rotation='rotation'></rotation>
     </div>
   </div>
 </template>
 
 <script>
 import Rotation from "../components/home/Rotation";
-import activitySection from "../components/home/activitySection";
-import hotGoods from "../components/home/hotGoods";
-import officialSelection from "../components/home/officialSelection";
-import brand from "../components/home/brand";
-import brandSelection from "../components/home/brandSelection";
-import activitySections from "../components/home/activitySections";
+import activitySection from '../components/home/activitySection';
+import hotGoods from '../components/home/hotGoods';
+import officialSelection from '../components/home/officialSelection';
+import brand from '../components/home/brand';
+import brandSelection from '../components/home/brandSelection';
+import activitySections from '../components/home/activitySections';
 export default {
   name: "Home",
   props: {},
@@ -48,12 +30,12 @@ export default {
     return {
       data: [], // 首页所有数据
       rotation: [], // 轮播图
-      activitySection: [], // 活动版块
+      activitySection : [], // 活动版块
       hotGoods: [], // 热门商品
       officialSelection: [], // 官方精选
       brand: [], // 品牌周边
       brandSelection: [], // 品牌精选
-      activitySections: [] //活动版块2
+      activitySections:[] //活动版块2
     };
   },
   methods: {},
@@ -67,8 +49,8 @@ export default {
         this.hotGoods = res.data[2].panelContents;
         this.officialSelection = res.data[3].panelContents;
         this.brand = res.data[4].panelContents;
-        this.brandSelection = res.data[5].panelContents;
-        this.activitySections = res.data[6].panelContents;
+        this.brandSelection = res.data[5].panelContents
+        this.activitySections = res.data[6].panelContents
         // console.log(this.data);
         console.log(this.rotation);
         console.log(this.activitySection);

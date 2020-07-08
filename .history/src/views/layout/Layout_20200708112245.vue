@@ -46,6 +46,6 @@ export default {
 .container {
   width: 100%;
   height: 100%;
-  background: rgb(240, 240, 240);
+  background: rgb(236, 236, 236);
 } 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <div>
       <rotation :rotation="rotation"></rotation>
     </div>
@@ -88,4 +88,9 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+.home {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
 </style>

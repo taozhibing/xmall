@@ -39,10 +39,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
-  width: 77%;
+  width: 1220px;
   border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 8px;
   background: #fff;

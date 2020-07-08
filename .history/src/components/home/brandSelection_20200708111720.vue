@@ -4,7 +4,7 @@
       <div class="crad">
         <div class="name">品牌精选</div>
         <div class="box">
-          <div v-for="(item,index) in brandSelection" :key="index" class="item">
+          <div v-for="(item,index) in periphery.panelContents" :key="index" class="item">
             <div v-if="index===0" class="items hover">
               <img :src="item.picUrl" alt width="610px" height="353px" />
             </div>

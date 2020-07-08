@@ -9,18 +9,18 @@
           @mousemove="bgMove($refs.bg,$event)"
           @mouseout="bgOut($refs.bg)"
         >
-          <transition name="fade">
-            <Carousel autoplay v-model="value" loop>
-              <CarouselItem v-for="item in rotation" :key="item.id">
-                <div class="demo-carousel">
-                  <div class="swiper">
-                    <img v-if="item.picUrl" class="img1 a" :src="item.picUrl" alt />
-                    <img v-if="item.picUrl2" class="img2 b" :src="item.picUrl2" alt />
-                    <img v-if="item.picUrl3" class="img3 c" :src="item.picUrl3" alt />
-                  </div>
+        <transition name="fade">
+          <Carousel autoplay v-model="value" loop>
+            <CarouselItem v-for="item in rotation" :key="item.id">
+              <div class="demo-carousel">
+                <div class="swiper">
+                  <img v-if="item.picUrl" class="img1" :src="item.picUrl" alt />
+                  <img v-if="item.picUrl2" class="img2" :src="item.picUrl2" alt />
+                  <img v-if="item.picUrl3" class="img3" :src="item.picUrl3" alt />
                 </div>
-              </CarouselItem>
-            </Carousel>
+              </div>
+            </CarouselItem>
+          </Carousel>
           </transition>
         </div>
       </div>
@@ -41,8 +41,7 @@ export default {
   data() {
     return {
       value: 0,
-      bgOpt: {
-        // 偏移初始赋值
+      bgOpt: {  // 偏移初始赋值
         px: 0,
         py: 0,
         w: 0,
@@ -72,8 +71,6 @@ export default {
       } else {
         Y = bgOpt.h / 2 - mouseY;
       }
-      // console.log(X);
-      // console.log(Y);
       dom.style["transform"] = `rotateY(${X / 50}deg) rotateX(${Y / 50}deg)`;
       dom.style.transform = `rotateY(${X / 50}deg) rotateX(${Y / 50}deg)`;
     },
@@ -127,18 +124,5 @@ export default {
   display: block;
   position: absolute;
   border-radius: 10px;
-}
-.a {
-  z-index: 20;
-  transform: translateZ(40px);
-}
-
-.b {
-  z-index: 20;
-  transform: translateZ(30px);
-}
-
-.c {
-  transform: translateZ(0px);
 }
 </style>

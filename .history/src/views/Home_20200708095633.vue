@@ -18,9 +18,7 @@
     <div>
       <brandSelection :brandSelection="brandSelection"></brandSelection>
     </div>
-    <div>
-      <activitySections :activitySections="activitySections"></activitySections>
-    </div>
+    <div><activitySections :activitySections="activitySections"></activitySections></div>
   </div>
 </template>
 

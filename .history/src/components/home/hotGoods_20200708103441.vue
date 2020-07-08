@@ -1,25 +1,20 @@
 <template>
   <div>
     <div class="container">
-      <div class="crad">
-        <div class="name">品牌精选</div>
-        <div class="box">
-          <div v-for="(item,index) in brandSelection" :key="index" class="item">
-            <div v-if="index===0" class="items hover">
-              <img :src="item.picUrl" alt width="610px" height="353px" />
+      <div class="card">
+        <div class="name">热门商品</div>
+        <div class="d-flex">
+          <div v-for="item in hotGoods" :key="item.id" class="item">
+            <div class="box">
+              <img :src="item.picUrl" alt width="206px" />
             </div>
-            <div v-else class="img">
-              <div>
-                <img :src="item.picUrl" alt width="206px" />
-              </div>
-              <h6>{{item.productName}}</h6>
-              <h5 class="subTitle">{{item.subTitle}}</h5>
-              <p class="price">￥{{item.salePrice}}.00</p>
-              <p class="btn1">
-                <Button size="small" class="btn">查看详情</Button>
-                <Button type="primary" size="small" class="but">加入购物车</Button>
-              </p>
-            </div>
+            <h6>{{item.productName}}</h6>
+            <h5 class="subTitle">{{item.subTitle}}</h5>
+            <p class="price">￥{{item.salePrice}}.00</p>
+            <p class="btn1">
+              <Button size="small" class="btn">查看详情</Button>
+              <Button type="primary" size="small" class="but">加入购物车</Button>
+            </p>
           </div>
         </div>
       </div>
@@ -31,7 +26,7 @@
 export default {
   name: "",
   props: {
-    brandSelection: {
+    hotGoods: {
       type: Array,
       default: () => {}
     }
@@ -54,7 +49,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
   width: 77%;
@@ -73,42 +68,28 @@ export default {
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.06);
   background: linear-gradient(#fbfbfb, #ececec);
 }
-.box {
-  width: 1220px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.imgs {
-  width: 50%;
-}
-.img {
-  width: 305px;
-  padding-bottom: 50px;
+.d-flex {
+  background: white;
+  border-radius: 0 0 8px 8px;
 }
 .item {
+  width: 50%;
   background: white;
   text-align: center;
 }
-.img:hover {
+.item:hover {
   cursor: pointer;
   transform: translateY(-3px);
-  box-shadow: 2px 2px 10px;
-  transition: all 0.5s;
+  box-shadow: 2px 2px 10px #000;
+  transition: all 1s;
+  z-index: 99;
 }
-.items:hover:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 1px 1px 10px;
-  -webkit-box-shadow: 0 0 30px #ccc inset;
-  -moz-box-shadow: 0 0 30px #ccc inset;
-  -o-box-shadow: 0 0 30px #ccc inset;
+.box {
+  display: flex;
 }
-.items {
-  display: inline-block;
-  *display: inline;
-  position: relative;
+img {
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 h6 {
   font-size: 16px;
@@ -124,6 +105,7 @@ p {
   font-size: 18px;
   color: #d44d44;
   margin-top: 10px;
+  margin-bottom: 50px;
 }
 .but {
   font-size: 12px;

@@ -12,15 +12,7 @@
     <div>
       <officialSelection :officialSelection="officialSelection"></officialSelection>
     </div>
-    <div>
-      <brand :brand="brand"></brand>
-    </div>
-    <div>
-      <brandSelection :brandSelection="brandSelection"></brandSelection>
-    </div>
-    <div>
-      <activitySections :activitySections="activitySections"></activitySections>
-    </div>
+    <div><brand :brand="brand"></brand></div>
   </div>
 </template>
 

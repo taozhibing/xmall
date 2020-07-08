@@ -2,9 +2,11 @@
   <div>
     <div class="container">
       <div class="card">
-        <div v-for="item in activitySection" :key="item.id" class="item">
-          <div class="li hover">
-            <img :src="item.picUrl" alt class="img" />
+        <div class="box">
+          <div v-for="(item,index) in activitySections" :key="index" class="imgs hover">
+            <div v-if="index>0">
+              <img :src="item.picUrl" alt height="200px" class="img" />
+            </div>
           </div>
         </div>
       </div>
@@ -16,7 +18,7 @@
 export default {
   name: "",
   props: {
-    activitySection: {
+    activitySections: {
       type: Array,
       default: () => {}
     }
@@ -39,21 +41,24 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
   width: 77%;
-  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 8px;
-  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-color: rgba(0, 0, 0, 0.14);
   box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+}
+.box {
   display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
-.item {
-  width: 25%;
-  border-right: 1px solid #eeeeee;
+.img {
+  margin-right: 100px;
 }
-.li:hover:before {
+.imgs:hover:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -64,15 +69,9 @@ export default {
   -moz-box-shadow: 0 0 30px #ccc inset;
   -o-box-shadow: 0 0 30px #ccc inset;
 }
-.li {
+.imgs {
   display: inline-block;
   *display: inline;
   position: relative;
-}
-.img {
-  width: 100%;
-  &:first-child {
-    border-radius: 8px 0 0 8px;
-  }
 }
 </style>

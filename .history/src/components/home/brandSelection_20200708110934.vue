@@ -2,14 +2,14 @@
   <div>
     <div class="container">
       <div class="crad">
-        <div class="name">品牌精选</div>
-        <div class="box">
-          <div v-for="(item,index) in brandSelection" :key="index" class="item">
+        <div class="name">{{periphery.name}}</div>
+        <div class="huanh">
+          <div v-for="(item,index) in periphery.panelContents" :key="index" class="item">
             <div v-if="index===0" class="items hover">
               <img :src="item.picUrl" alt width="610px" height="353px" />
             </div>
             <div v-else class="img">
-              <div>
+              <div class="flex-cent">
                 <img :src="item.picUrl" alt width="206px" />
               </div>
               <h6>{{item.productName}}</h6>
@@ -54,7 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .card {
   width: 77%;
