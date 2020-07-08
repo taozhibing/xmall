@@ -1,6 +1,6 @@
 <template>
  <div>
-品牌精选
+官方精选
  </div>
 </template>
 
@@ -8,9 +8,8 @@
  export default {
    name: '',
    props: {
-     brandSelection : {
-       type: Array,
-      default: () => {}
+     officialSelection : {
+       
      }
    },
    components: {

@@ -1,6 +1,6 @@
 <template>
  <div>
-品牌精选
+活动版块
  </div>
 </template>
 
@@ -8,7 +8,7 @@
  export default {
    name: '',
    props: {
-     brandSelection : {
+     activitySection : {
        type: Array,
       default: () => {}
      }

@@ -9,8 +9,7 @@
    name: '',
    props: {
      brandSelection : {
-       type: Array,
-      default: () => {}
+       
      }
    },
    components: {
