@@ -21,13 +21,6 @@ export default {
   allGoods({page, size, sort, priceGt, priceLte}) {
     return service.get(`/goods/allGoods?page=${page}&size=${size}&sort=${sort}&priceGt=${priceGt}&priceLte=${priceLte}`)
   },
-  allGood(page,size) {
-    return service.get(`/goods/allGoods?page=${page}&size=${size}`)
-  },
-  allGoodSort(page,size,sort) {
-    return service.get(`/goods/allGoods?page=${page}&size=${size}&sort=${sort}`)
-  },
-
   //  搜索商品(4)
   //   参数:
   // keyword: 关键字

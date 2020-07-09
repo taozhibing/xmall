@@ -29,7 +29,7 @@ const routes = [
         name: 'AllGoods',
         component: () => import('../views/allGoods/AllGoods'),
         meta: {
-          title: '全部商品页'
+          title: '全部商品'
         }
       },
     ]

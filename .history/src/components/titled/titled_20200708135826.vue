@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     home() {
-      this.$router.push('/')
+      this.$router.push('')
     },
     allGoods() {
       this.$router.push('allGoods')

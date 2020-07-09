@@ -21,10 +21,10 @@ export default {
   allGoods({page, size, sort, priceGt, priceLte}) {
     return service.get(`/goods/allGoods?page=${page}&size=${size}&sort=${sort}&priceGt=${priceGt}&priceLte=${priceLte}`)
   },
-  allGood(page,size) {
+  allGoodsA(page,size) {
     return service.get(`/goods/allGoods?page=${page}&size=${size}`)
   },
-  allGoodSort(page,size,sort) {
+  allGoodsB(page,size,sort) {
     return service.get(`/goods/allGoods?page=${page}&size=${size}&sort=${sort}`)
   },
 

@@ -3,7 +3,7 @@
     <div class="titled">
       <div class="t-titled">
         <div class="spot"></div>
-        <div class="font" @click="home">首页</div>
+        <div class="font">首页</div>
         <div class="spot"></div>
         <div class="t-font" @click="allGoods">全部</div>
         <div class="spot"></div>
@@ -35,14 +35,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    home() {
-      this.$router.push('/')
-    },
-    allGoods() {
-      this.$router.push('allGoods')
-    }
-  },
+  methods: {},
   mounted() {},
   watch: {},
   computed: {}
