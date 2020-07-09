@@ -40,7 +40,7 @@
                 <a href style="font-size:12px">忘记密码 ?</a>
               </div>
             </div>
-            <div class="btn" v-if="this.username === '' || this.password === ''">
+            <div class="btn" v-if="this.username === '' || this.password === '' ||  flag === false">
               <Button type="primary" disabled long>登录</Button>
             </div>
             <div @click="login" class="btn" v-else>
@@ -147,7 +147,8 @@ export default {
             if (
               !this.readyState ||
               this.readyState == "loaded" ||
-              this.readyState == "complete" 
+              this.readyState == "complete" || 
+              this.flag === true
             ) {
               resolve();
               script.onload = script.onreadystatechange = null;

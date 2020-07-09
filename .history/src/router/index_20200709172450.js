@@ -43,17 +43,9 @@ const routes = [
       {
         path: 'shopCart',
         name: 'ShopCart',
-        component: () => import('../views/shopCart/ShopCart'),
+        component: () => import('../views/detail/Detail'),
         meta: {
-          title: '购物车页'
-        }
-      },
-      {
-        path: 'checkOut',
-        name: 'CheckOut',
-        component: () => import('../views/checkOut/CheckOut'),
-        meta: {
-          title: '清单结算页'
+          title: '详情页'
         }
       },
     ]

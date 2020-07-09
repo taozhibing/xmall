@@ -35,25 +35,9 @@ const routes = [
       {
         path: 'detail',
         name: 'Detail',
-        component: () => import('../views/detail/Detail'),
+        component: () => import('../views/allGoods/AllGoods'),
         meta: {
-          title: '详情页'
-        }
-      },
-      {
-        path: 'shopCart',
-        name: 'ShopCart',
-        component: () => import('../views/shopCart/ShopCart'),
-        meta: {
-          title: '购物车页'
-        }
-      },
-      {
-        path: 'checkOut',
-        name: 'CheckOut',
-        component: () => import('../views/checkOut/CheckOut'),
-        meta: {
-          title: '清单结算页'
+          title: '全部商品页'
         }
       },
     ]

@@ -48,14 +48,6 @@ const routes = [
           title: '购物车页'
         }
       },
-      {
-        path: 'checkOut',
-        name: 'CheckOut',
-        component: () => import('../views/checkOut/CheckOut'),
-        meta: {
-          title: '清单结算页'
-        }
-      },
     ]
   },
   {

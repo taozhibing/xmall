@@ -51,9 +51,9 @@ const routes = [
       {
         path: 'checkOut',
         name: 'CheckOut',
-        component: () => import('../views/checkOut/CheckOut'),
+        component: () => import('../views/shopCart/ShopCart'),
         meta: {
-          title: '清单结算页'
+          title: '购物车页'
         }
       },
     ]

@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="card">
-      <div class="name">品牌周边</div>
+    <div class="name">品牌周边</div>
       <div class="box">
         <div v-for="(item,index) in brand" :key="index" class="item">
           <div v-if="index===0" class="items hover">
-            <img :src="item.picUrl" alt width="610px" height="353px" />
+            <img :src="item.picUrl" alt width="610px" height="353px"/>
           </div>
           <div v-else class="img">
             <div>
@@ -15,7 +15,7 @@
             <h5 class="subTitle">{{item.subTitle}}</h5>
             <p class="price">￥{{item.salePrice}}.00</p>
             <p class="btn1">
-              <Button size="small" class="btn" @click="goDetail(item.productId)">查看详情</Button>
+              <Button size="small" class="btn" @click="goDetail(item)">查看详情</Button>
               <Button type="primary" size="small" class="but">加入购物车</Button>
             </p>
           </div>
@@ -36,13 +36,11 @@ export default {
   },
   components: {},
   data() {
-    return {
-      
-    };
+    return {};
   },
   methods: {
-    goDetail(productId) {
-      window.open("/detail?productId=" + productId);
+    goDetail(item) {
+      this.$router.push({path:detail,query:{productId: item.productId}})
     }
   },
   mounted() {},

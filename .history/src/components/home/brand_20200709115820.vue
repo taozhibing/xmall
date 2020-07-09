@@ -15,7 +15,7 @@
             <h5 class="subTitle">{{item.subTitle}}</h5>
             <p class="price">￥{{item.salePrice}}.00</p>
             <p class="btn1">
-              <Button size="small" class="btn" @click="goDetail(item.productId)">查看详情</Button>
+              <Button size="small" class="btn" @click="goDetail(index)">查看详情</Button>
               <Button type="primary" size="small" class="but">加入购物车</Button>
             </p>
           </div>
@@ -41,8 +41,9 @@ export default {
     };
   },
   methods: {
-    goDetail(productId) {
-      window.open("/detail?productId=" + productId);
+    goDetail(index) {
+      this.$router.push({name:'Detail',query:{productId:brand[index].productId}})
+      window.open(`/detail?item=${item.productId}`)
     }
   },
   mounted() {},

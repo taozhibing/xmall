@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     goDetail(productId) {
-      window.open("/detail?productId=" + productId);
+      window.open(`/detail?index=${this.brand[index]}`)
     }
   },
   mounted() {},

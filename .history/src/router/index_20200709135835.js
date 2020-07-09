@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Layout from '../views/layout/Layout'
+import Layout from '../views/layout1/Layout'
 
 
 Vue.use(VueRouter)
@@ -38,22 +38,6 @@ const routes = [
         component: () => import('../views/detail/Detail'),
         meta: {
           title: '详情页'
-        }
-      },
-      {
-        path: 'shopCart',
-        name: 'ShopCart',
-        component: () => import('../views/shopCart/ShopCart'),
-        meta: {
-          title: '购物车页'
-        }
-      },
-      {
-        path: 'checkOut',
-        name: 'CheckOut',
-        component: () => import('../views/checkOut/CheckOut'),
-        meta: {
-          title: '清单结算页'
         }
       },
     ]

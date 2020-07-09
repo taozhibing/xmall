@@ -61,7 +61,7 @@ export default {
     return service.post(`/goods/addCart`, { productId })
   },
   // 查询购物车(9)
-  getCarts() {
+  getCart() {
     return service.get(`/goods/getCart`)
   },
   // 删除购物车的商品(10)

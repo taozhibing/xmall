@@ -40,7 +40,7 @@
                 <a href style="font-size:12px">忘记密码 ?</a>
               </div>
             </div>
-            <div class="btn" v-if="this.username === '' || this.password === ''">
+            <div class="btn" v-if="this.username === '' || this.password === '' || script.async === true">
               <Button type="primary" disabled long>登录</Button>
             </div>
             <div @click="login" class="btn" v-else>
@@ -111,8 +111,7 @@ export default {
     return {
       username: "",
       password: "",
-      single: false,
-      flag : false
+      single: false
     };
   },
   methods: {
@@ -147,7 +146,7 @@ export default {
             if (
               !this.readyState ||
               this.readyState == "loaded" ||
-              this.readyState == "complete" 
+              this.readyState == "complete"
             ) {
               resolve();
               script.onload = script.onreadystatechange = null;
