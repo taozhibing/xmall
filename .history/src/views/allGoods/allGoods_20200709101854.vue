@@ -125,8 +125,7 @@ export default {
             this.total = res.total;
             this.defaulted = res.data;
             console.log(this.defaulted);
-          }
-          if (this.min > this.max) {
+          } if(this.min > this.max) {
             this.$Message.error("请由小到大正确输入价格区间");
           }
         })

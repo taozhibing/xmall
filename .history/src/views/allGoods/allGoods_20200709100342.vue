@@ -35,9 +35,10 @@
             :page-size-opts="[8, 20, 40, 80]"
             :page-size="size"
             :current-page="page"
+            size="small"
             show-sizer
-            show-elevator
             show-total
+            show-elevator
             @on-change="change"
             @on-page-size-change="changepage"
           />
@@ -60,7 +61,7 @@ export default {
       size: 20,
       sortType: 1,
       total: "",
-      defaulted: []
+      defaulted: [],
     };
   },
   methods: {
@@ -121,13 +122,12 @@ export default {
           priceLte: this.max
         })
         .then(res => {
-          if (res.code === 200 || this.min < this.max) {
+          if (res.code === 200 && Number(this.min) < Number(this.max)) {
             this.total = res.total;
             this.defaulted = res.data;
             console.log(this.defaulted);
-          }
-          if (this.min > this.max) {
-            this.$Message.error("请由小到大正确输入价格区间");
+          } else {
+            this.$Message("请由小到大正确输入区间");
           }
         })
         .catch(err => {});

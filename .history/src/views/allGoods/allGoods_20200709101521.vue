@@ -36,7 +36,7 @@
             :page-size="size"
             :current-page="page"
             show-sizer
-            show-elevator
+             show-elevator
             show-total
             @on-change="change"
             @on-page-size-change="changepage"
@@ -60,7 +60,7 @@ export default {
       size: 20,
       sortType: 1,
       total: "",
-      defaulted: []
+      defaulted: [],
     };
   },
   methods: {
@@ -125,8 +125,7 @@ export default {
             this.total = res.total;
             this.defaulted = res.data;
             console.log(this.defaulted);
-          }
-          if (this.min > this.max) {
+          } else {
             this.$Message.error("请由小到大正确输入价格区间");
           }
         })

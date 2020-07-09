@@ -10,7 +10,7 @@
             <input type="number" class="input" placeholder="价格" v-model="min" />
             <span style="margin: 0 5px">-</span>
             <input type="number" placeholder="价格" class="input" v-model="max" />
-            <Button type="primary" style="margin-left: 10px;" @click="search">确定</Button>
+            <Button type="primary" style="margin-left: 10px;">确定</Button>
           </div>
         </div>
         <div class="huanh">
@@ -35,9 +35,10 @@
             :page-size-opts="[8, 20, 40, 80]"
             :page-size="size"
             :current-page="page"
+            size="small"
             show-sizer
-            show-elevator
             show-total
+            show-elevator
             @on-change="change"
             @on-page-size-change="changepage"
           />
@@ -57,7 +58,7 @@ export default {
       min: "",
       max: "",
       page: 1,
-      size: 20,
+      size: 8,
       sortType: 1,
       total: "",
       defaulted: []
@@ -73,6 +74,12 @@ export default {
       this.getData();
     },
     getData() {
+      if (this.min !== "") {
+        this.min = Math.floor(this.min);
+      }
+      if (this.max !== "") {
+        this.max = Math.floor(this.max);
+      }
       this.$api
         .allGood({
           page: this.page,
@@ -90,47 +97,16 @@ export default {
     // 默认排序
     reset() {
       this.sortType = 1;
+      this.sort = "";
+      this.page = 1;
       this.getData();
     },
     // 价格排序
     sortByPrice(v) {
       v === 1 ? (this.sortType = 2) : (this.sortType = 3);
       this.sort = v;
-      this.$api
-        .allGoodSort({ page: this.page, size: this.size, sort: this.sort })
-        .then(res => {
-          this.defaulted = res.data;
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    },
-    search() {
-      if (this.min !== "") {
-        this.min = Math.floor(this.min);
-      }
-      if (this.max !== "") {
-        this.max = Math.floor(this.max);
-      }
-      this.$api
-        .allGoods({
-          page: this.page,
-          size: this.size,
-          sort: 1,
-          priceGt: this.min,
-          priceLte: this.max
-        })
-        .then(res => {
-          if (res.code === 200 || this.min < this.max) {
-            this.total = res.total;
-            this.defaulted = res.data;
-            console.log(this.defaulted);
-          }
-          if (this.min > this.max) {
-            this.$Message.error("请由小到大正确输入价格区间");
-          }
-        })
-        .catch(err => {});
+      this.page = 1;
+      this.$api;
     }
   },
   mounted() {
