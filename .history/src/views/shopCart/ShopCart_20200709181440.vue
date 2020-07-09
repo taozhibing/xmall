@@ -1,11 +1,12 @@
 <template>
  <div>
+
  </div>
 </template>
 
 <script>
  export default {
-   name: 'CheckOut',
+   name: 'ShopCart',
    props: {
    },
    components: {
@@ -20,7 +21,11 @@
 
    },
    mounted() {
-
+    this.$api.getCarts().then(res => {
+      console.log(res);
+    }).catch(err =>{
+      console.log(err);
+    })
    },
    watch: {
 
