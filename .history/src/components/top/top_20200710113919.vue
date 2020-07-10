@@ -17,67 +17,63 @@
             <div class="r-font">捐赠</div>
           </div>
           <div class="r-right">
-            <div class="user" @click="login">
+            <div class="piaoqilai" @click="login">
               <Icon type="ios-contact" size="24" />
             </div>
-            <div class="b-right">
-              <div>
-                <Tooltip placement="top-end" theme="light" max-width="450">
-                  <div class=" padd-r hovers">
-                    <Icon type="ios-cart-outline" class="outline"/>
-                    <div v-if="length===0">
-                      <div class="flex-cent">{{length}}</div>
-                    </div>
-                    <div v-else>
-                      <div class="flex-cent have">{{length}}</div>
-                    </div>
-                  </div>
-                  <div slot="content" class="tankuan f-dir-mid" v-if="length===0">
-                    <Icon type="ios-cart-outline" class="carts"/>
-                    <div class="null">你的购物车竟然是空的</div>
-                  </div>
-                  <div v-else slot="content" class="tankuan f-dir-mid">
-                    <div v-for="item in shopList" :key="item.id">
-                      <div class="paddten">
-                        <a href>
-                          <div class="item-thumb">
-                            <img :src="item.productImageBig" width="100%" />
-                          </div>
-                          <div class="item-desc">
-                            <div>
-                              <h4>
-                                <div class="productName">{{item.productName}}</div>
-                              </h4>
-                              <h6>
-                                <span class="price-icon">¥</span>
-                                <span class="price-num">{{item.salePrice}}</span>
-                                <span class="item-num">x {{item.count}}</span>
-                              </h6>
-                            </div>
-                            <Icon
-                              type="ios-close-circle-outline"
-                              class="close"
-                              @click="delCart(item._id)"
-                            />
-                          </div>
-                        </a>
-                      </div>
-                      <div class="xian"></div>
-                    </div>
-                    <div class="total">
-                      <div>
-                        <p class="total-num">共{{length}}件商品</p>
-                        <p>
-                          合计：
-                          <span class="total-price">{{total | fixed}}</span>
-                        </p>
-                      </div>
-                      <Button type="primary" @click="goToCart">去购物车</Button>
-                    </div>
-                  </div>
-                </Tooltip>
+            <Tooltip placement="top-end" theme="light" max-width="450">
+              <div class="flex-a-c padd-r hovers">
+                <Icon type="ios-cart-outline" class="outline" />
+                <div v-if="length===0">
+                  <div class="flex-cent">{{length}}</div>
+                </div>
+                <div v-else>
+                  <div class="flex-cent have">{{length}}</div>
+                </div>
               </div>
-            </div>
+              <div slot="content" class="tankuan f-dir-mid" v-if="length===0">
+                <Icon type="ios-cart" class="carts" />
+                <div class="null">你的购物车竟然是空的</div>
+              </div>
+              <div v-else slot="content" class="tankuan f-dir-mid">
+                <div v-for="item in shopList" :key="item.id">
+                  <div class="paddten">
+                    <a href>
+                      <div class="item-thumb">
+                        <img :src="item.productImageBig" width="100%" />
+                      </div>
+                      <div class="item-desc">
+                        <div>
+                          <h4>
+                            <div class="productName">{{item.productName}}</div>
+                          </h4>
+                          <h6>
+                            <span class="price-icon">¥</span>
+                            <span class="price-num">{{item.salePrice}}</span>
+                            <span class="item-num">x {{item.count}}</span>
+                          </h6>
+                        </div>
+                        <Icon
+                          type="ios-close-circle-outline"
+                          class="close"
+                          @click="delCart(item._id)"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="xian"></div>
+                </div>
+                <div class="total">
+                  <div>
+                    <p class="total-num">共{{length}}件商品</p>
+                    <p>
+                      合计：
+                      <span class="total-price">{{total | fixed}}</span>
+                    </p>
+                  </div>
+                  <Button type="primary" @click="goToCart">去购物车</Button>
+                </div>
+              </div>
+            </Tooltip>
           </div>
         </div>
       </div>
@@ -221,7 +217,6 @@ input {
 .r-font {
   color: rgb(150, 150, 150);
   font-size: 16px;
-  cursor: pointer;
 }
 .r-font:hover {
   color: white;
@@ -235,9 +230,11 @@ input {
 .carts {
   display: flex;
   justify-content: center;
-  background: dimgrey;
 }
-.user :hover {
+.icon {
+  margin-right: 5px;
+}
+.piaoqilai :hover {
   color: white;
 }
 
@@ -301,7 +298,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
-  color: rgb(69, 87, 252);
 }
 .price-icon {
   color: #d44d44;
@@ -336,6 +332,52 @@ input {
   color: #d44d44;
   font-weight: 700;
 }
+.w-box {
+  width: 1220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+}
+.logo {
+  color: #666;
+}
+.padd-lrew {
+  color: #c8c8c8;
+  font-size: 14px;
+}
+.padd-lrew:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.nav-line {
+  width: 1px;
+  height: 13px;
+  background: rgba($color: #ffffff, $alpha: 0.2);
+}
+.contact {
+  font-size: 24px;
+  color: #666;
+  padding: 0 10px;
+  margin-right: 20px;
+}
+.contact:hover {
+  color: #fff;
+  cursor: pointer;
+}
 .outline {
   font-size: 24px;
   color: #666;
@@ -346,13 +388,37 @@ input {
   border-radius: 50%;
   background: #989898;
   color: #fff;
-  text-align: center;
 }
 .have {
   background: red;
 }
-.padd-r {
+.nav-right {
+  width: 160px;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-warpper {
+  background: #f7f7f7;
+  padding: 31px 0;
+  display: flex;
+  justify-content: center;
+}
+.nav-item {
+  font-size: 14px;
+  color: #666;
+}
+.Badge {
+  width: 2px;
+  height: 2px;
+  background: #bdbdbd;
+}
+.warpper-box {
+  width: 1220px;
   display: flex;
   align-items: center;
+}
+.blue:hover {
+  cursor: pointer;
+  color: #5079d9;
 }
 </style>

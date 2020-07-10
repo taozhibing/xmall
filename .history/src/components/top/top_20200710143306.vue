@@ -301,7 +301,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
-  color: rgb(69, 87, 252);
 }
 .price-icon {
   color: #d44d44;

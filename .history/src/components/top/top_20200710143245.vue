@@ -46,7 +46,7 @@
                           <div class="item-desc">
                             <div>
                               <h4>
-                                <div class="productName">{{item.productName}}</div>
+                                <a class="productName">{{item.productName}}</a>
                               </h4>
                               <h6>
                                 <span class="price-icon">¥</span>
@@ -301,7 +301,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
-  color: rgb(69, 87, 252);
 }
 .price-icon {
   color: #d44d44;

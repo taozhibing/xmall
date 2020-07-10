@@ -301,7 +301,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
-  color: rgb(69, 87, 252);
 }
 .price-icon {
   color: #d44d44;
@@ -335,6 +334,21 @@ input {
 .total-price {
   color: #d44d44;
   font-weight: 700;
+}
+.nav-line {
+  width: 1px;
+  height: 13px;
+  background: rgba($color: #ffffff, $alpha: 0.2);
+}
+.contact {
+  font-size: 24px;
+  color: #666;
+  padding: 0 10px;
+  margin-right: 20px;
+}
+.contact:hover {
+  color: #fff;
+  cursor: pointer;
 }
 .outline {
   font-size: 24px;

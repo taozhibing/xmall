@@ -301,7 +301,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
-  color: rgb(69, 87, 252);
 }
 .price-icon {
   color: #d44d44;
@@ -335,10 +334,6 @@ input {
 .total-price {
   color: #d44d44;
   font-weight: 700;
-}
-.outline {
-  font-size: 24px;
-  color: #666;
 }
 .flex-cent {
   width: 20px;

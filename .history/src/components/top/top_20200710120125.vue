@@ -17,7 +17,7 @@
             <div class="r-font">捐赠</div>
           </div>
           <div class="r-right">
-            <div class="user" @click="login">
+            <div class="piaoqilai" @click="login">
               <Icon type="ios-contact" size="24" />
             </div>
             <div class="b-right">
@@ -237,7 +237,7 @@ input {
   justify-content: center;
   background: dimgrey;
 }
-.user :hover {
+.piaoqilai :hover {
   color: white;
 }
 
@@ -301,7 +301,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
-  color: rgb(69, 87, 252);
 }
 .price-icon {
   color: #d44d44;
@@ -335,6 +334,52 @@ input {
 .total-price {
   color: #d44d44;
   font-weight: 700;
+}
+.w-box {
+  width: 1220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+}
+.logo {
+  color: #666;
+}
+.padd-lrew {
+  color: #c8c8c8;
+  font-size: 14px;
+}
+.padd-lrew:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.nav-line {
+  width: 1px;
+  height: 13px;
+  background: rgba($color: #ffffff, $alpha: 0.2);
+}
+.contact {
+  font-size: 24px;
+  color: #666;
+  padding: 0 10px;
+  margin-right: 20px;
+}
+.contact:hover {
+  color: #fff;
+  cursor: pointer;
 }
 .outline {
   font-size: 24px;
